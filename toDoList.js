@@ -13,11 +13,15 @@ function saveToDos(){
 function deleteToDo(e){
     const li = e.target.parentElement
     li.remove()
+    toDos = toDos.filter((item) => item.id !== parseInt(li.id))
+
+
 }
 
 function paintToDo(newToDo){
     const li = document.createElement("li")
-    li.innerText = newToDo;
+    li.setAttribute("id", newToDo.id)
+    li.innerText = newToDo.text;
     toDoList.appendChild(li)
 
     const button = document.createElement('button')
@@ -31,12 +35,15 @@ function paintToDo(newToDo){
 function handleToDoSubmit(event){
     event.preventDefault();
     // console.log(toDoInput.value)
-    const newToDo = toDoInput.value
+    const newToDoObj = {
+        text: toDoInput.value,
+        id: Date.now()
+    }
     toDoInput.value = "";
     // 그려주는 함수 
-    paintToDo(newToDo)
+    paintToDo(newToDoObj)
     // 로컬 스토리지에 저장
-    toDos.push(newToDo)
+    toDos.push(newToDoObj)
     saveToDos()
 
 }
