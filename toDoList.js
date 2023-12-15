@@ -15,7 +15,6 @@ function deleteToDo(e){
     li.remove()
     toDos = toDos.filter((item) => item.id !== parseInt(li.id))
     saveToDos()
-
 }
 
 function paintToDo(newToDo){
