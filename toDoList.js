@@ -16,7 +16,7 @@ function deleteToDo(e){
     toDos = toDos.filter((item) => item.id !== parseInt(li.id))
     saveToDos()
 }
-
+lklklkl
 function paintToDo(newToDo){
     const li = document.createElement("li")
     li.setAttribute("id", newToDo.id)
