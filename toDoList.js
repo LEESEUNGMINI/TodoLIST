@@ -44,7 +44,7 @@ function handleToDoSubmit(event){
     // 로컬 스토리지에 저장
     toDos.push(newToDoObj)
     saveToDos()
-// zz
+// ㅎㅎ
 }
 
 toDoForm.addEventListener('submit',handleToDoSubmit);
